@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Bloques en cadena</h1>
+	<p>Cada tarjeta representa un bloque en la cadena. Haz clic en un bloque para ver las transacciones almacenadas en su interior.</p>
+</div>
+
+<div class="container" style="overflow-x: scroll;white-space: nowrap;">
+	<app-block-view 
+		*ngFor="let block of blocks" 
+		[block]="block" 
+		[selectedBlock]="selectedBlock"
+		(click)="showTransactions(block)"
+	></app-block-view>
+</div>
+
+<br><br>
+
+<div class="container">
+	<h1>Transacciones dentro del bloque {{ getBlockNumber(selectedBlock) }}</h1>
+
+	<app-transactions-table
+		[transactions]="selectedBlock.transactions"
+	></app-transactions-table>
+</div>
+

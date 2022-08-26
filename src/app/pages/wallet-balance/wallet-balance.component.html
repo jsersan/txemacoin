@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Detalles del monedero</h1>
+
+	<p style="word-wrap:break-word;">
+		<strong>Dirección:</strong>
+		<br>
+		{{walletAddress}}
+	</p>
+
+	<p>
+		<strong>Balance:</strong>
+		<br>
+		{{ balance }}
+	</p>
+
+	<hr>
+
+	<h1>Transacciones</h1>
+	<p *ngIf="transactions.length === 0">Esta cartera no tiene transacciones (todavía)</p>
+	<app-transactions-table
+		[transactions]="transactions"
+		*ngIf="transactions.length > 0"
+	></app-transactions-table>
+</div>

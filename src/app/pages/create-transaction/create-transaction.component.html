@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>Crear transacción</h1>
+	<p>Transferir algo de dinero a alguien!</p>
+
+	<br>
+
+	<div class="form-group">
+	    <label for="fromAddress">De dirección:</label>
+	    <input type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" [(ngModel)]="ownWalletKey.publicKey" disabled>
+	    <small id="fromAddressHelp" class="form-text text-muted">
+	    	Esta es la dirección de tu monedero. No puedes cambiarla porque sólo puedes gastar tus propias monedas.
+	    </small>
+  	</div>
+
+  	<div class="form-group">
+	    <label for="toAddress">A dirección:</label>
+	    <input type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" [(ngModel)]="newTx.toAddress">
+	    <small id="toAddressHelp" class="form-text text-muted">
+			La dirección del monedero al que quieres enviar el dinero. Puedes escribir aquí un texto aleatorio (si no te interesa recuperar los fondos)
+	    </small>
+  	</div>
+
+  	<div class="form-group">
+	    <label for="amount">Cantidad</label>
+	    <input type="number" class="form-control" id="amount" aria-describedby="amountHelp" [(ngModel)]="newTx.amount">
+	    <small id="amountHelp" class="form-text text-muted">
+	    	Puede transferir cualquier cantidad. El saldo de la cuenta no se comprueba en esta demo. ¡Adelante!
+	    </small>
+  	</div>
+
+  	<button (click)="createTransaction()" type="submit" class="btn btn-primary">Firma y crea la transacción</button>
+
+</div>

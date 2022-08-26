@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    <img src="assets/img/logo-savjee.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    &nbsp;SavjeeCoin
+  </a>
+
+  <div>
+    <button routerLink="/new/transaction/pending" class="btn btn-outline-light" *ngIf="thereArePendingTransactions()">
+      Transacciones pendientes
+      <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
+    </button>
+    &nbsp;
+    <button routerLink="/settings" class="btn btn-outline-light">
+      Configuración
+    </button>
+    &nbsp;
+    <button routerLink="/new/transaction" class="btn btn-outline-light">
+      Crear transacción
+    </button>
+  </div>
+</nav>
+
+<br>
+
+<div class="container" *ngIf="showInfoMessage === true">
+  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">Lo primero es lo primero.</h4>
+    Esta herramienta le ofrece la posibilidad de mirar entre bastidores de una cadena de bloques. Puedes crear transacciones, minar bloques y ver cómo funcionan todos juntos. Adelante, haz algunas transacciones, mina un bloque, ajusta la configuración y ve los efectos de tus acciones en tiempo real.
+    <hr>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="dismissInfoMessage()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<footer class="text-muted text-center" style="margin-top: 150px;">
+  <small>Sólo para propósitos educacionales<br>
+  <a href="https://github.com/jsersan/savjeecoin-frontend" target="_blank">Source code</a></small>
+</footer>
