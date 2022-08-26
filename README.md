@@ -60,4 +60,3 @@ At this point the application should be running on your machine on [http://local
 ![](https://savjee.github.io/savjeecoin-frontend/assets/screenshots/wallet-details.png)
 
 *⚠️This is for educational purposes only. This is by no means a complete blockchain implementation (nor does it aim to be one). Use it to learn how blockchains operate.*
-# txemacoin
